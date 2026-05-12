@@ -75,10 +75,16 @@ if st.button("合計を計算する"):
 
         total_count  += item_count
         total_amount += item_amount
+    st.subheader(f"総合計　{total_count}件　¥{total_amount:,}")
+    # 現金売上入力
+st.subheader("💴 現金売上")
+col1, col2 = st.columns([3, 3])
+with col1:
+    st.text_input("現金売上金額", key="cash_amount",
+                  placeholder="金額", label_visibility="collapsed")
 st.subheader("📋 メモ欄（ここに日計表の内容を貼り付け）")
 st.text_area("メモ", placeholder="Live Textでコピーした内容をここに貼り付けてください",
              height=200, label_visibility="collapsed")
         st.write(f"**{item}**　{item_count}件　¥{item_amount:,}")
 
     st.divider()
-    st.subheader(f"総合計　{total_count}件　¥{total_amount:,}")
