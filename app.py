@@ -75,7 +75,9 @@ if st.button("合計を計算する"):
 
         total_count  += item_count
         total_amount += item_amount
-
+st.subheader("📋 メモ欄（ここに日計表の内容を貼り付け）")
+st.text_area("メモ", placeholder="Live Textでコピーした内容をここに貼り付けてください",
+             height=200, label_visibility="collapsed")
         st.write(f"**{item}**　{item_count}件　¥{item_amount:,}")
 
     st.divider()
